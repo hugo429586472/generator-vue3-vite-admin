@@ -1,0 +1,52 @@
+{
+  "name": "vue3-vite-admin",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0 && pretty-quick --check --branch dev",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json && pretty-quick --branch dev",
+    "prepare": "husky install",
+    "report": "cross-env REPORT=true yarn build"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
+    "@iconify/iconify": "^2.1.0",
+    "@types/lodash-es": "^4.17.5",
+    "ant-design-vue": "^2.2.8",
+    "axios": "^0.24.0",
+    "axios-caps": "0.0.2-beta.6",
+    "lodash-es": "^4.17.21",
+    "mockjs": "^1.1.0",
+    "moment": "^2.29.1",
+    "pinia": "^2.0.4",
+    "qs": "^6.10.1",
+    "spark-md5": "^3.0.2",
+    "vue": "^3.2.16",
+    "vue-i18n": "^9.1.9",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@element-plus/eslint-config": "2.2.13",
+    "@iconify/json": "^1.1.429",
+    "@types/node": "^16.11.6",
+    "@types/qs": "^6.9.7",
+    "@types/rollup-plugin-visualizer": "^4.2.1",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
+    "eslint": "^8.22.0",
+    "husky": "^7.0.4",
+    "less": "^4.1.2",
+    "postcss-less": "^5.0.0",
+    "pretty-quick": "^3.1.3",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-purge-icons": "^0.7.0",
+    "vite-plugin-theme": "^0.8.1",
+    "vite-plugin-windicss": "^1.5.1",
+    "vue-tsc": "^0.3.0"
+  }
+}

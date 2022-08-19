@@ -1,0 +1,45 @@
+# 用户模块
+user:
+  login:
+    path: user/login
+    type: post
+  list:
+    path: user/list
+    type: get
+  detail:
+    path: user/show/$id$ # $id$ 代表需要通过参数中的ID对象的值进行过滤
+    type: get
+  menu_list:
+    path: user/menu_list
+    type: get
+# 模块1
+base:
+  list:
+    host: main # 使用base对应的域名（main为默认值）
+    path: $menu$/list # $menu$ 代表需要通过参数中的menu对象的值进行过滤
+    type: get
+    cookie:
+      use: true
+    cache:
+      use: true # 是否使用cache缓存
+      key: $menu$_list  # 自定义缓存键，可以通过同名缓存键获取数据
+      timeout: 3000 # 缓存时间（单位：秒）
+    header:
+      Content-Type: application/json
+    repeat_request_interceptor:
+      use: true  # 是否不允许重复请求（先判断缓存，再判断这个）
+      key: $menu$_list  # 自定义请求key，不设置则会自动生成，设置后同一key请求在一段时间内都不会执行（防抖）
+      duration: 500 # 不允许多少时间内的重复请求
+    repeat_response_interceptor:
+      use: true  # 是否不允许重复请求（先判断缓存，再判断这个）
+      duration: 500 # 不允许多少时间内的重复请求
+  add:
+    host: external
+    path: $menu$/add
+    type: post
+  edit:
+    path: $menu$/$id$/edit
+    type: post
+  show:
+    path: $menu$/$id$
+    type: get

@@ -1,0 +1,24 @@
+{
+  "name": "generator-vue3-vite-admin",
+  "version": "1.0.0",
+  "description": "A vue3 admin generator project",
+  "keywords": [
+    "yeoman",
+    "generator",
+    "vue3",
+    "vite"
+  ],
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json --max-warnings 0",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.md,.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@element-plus/eslint-config": "2.2.13",
+    "@types/node": "^18.7.6",
+    "eslint": "^8.22.0"
+  }
+}
