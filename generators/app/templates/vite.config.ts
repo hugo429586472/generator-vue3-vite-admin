@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import purgeIcons from "vite-plugin-purge-icons";
@@ -12,9 +12,16 @@ import type { ConfigEnv, UserConfig } from "vite";
 // import { viteThemePlugin, antdDarkThemePlugin } from 'vite-plugin-theme';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }: ConfigEnv): UserConfig => {
+export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
+
+  const root = process.cwd();
+  const env = loadEnv(mode, root);
   const isBuild = command === "build";
   return {
+    define: {
+      'process.env': { ...process.env, ...env },
+      'process.argv': process.argv,
+    },
     plugins: [
       vue(), // 编译vue文件
       vueJsx(),
@@ -52,6 +59,10 @@ export default defineConfig(({ command }: ConfigEnv): UserConfig => {
           find: "@",
           replacement: `${pathResolve("src")}/`,
         },
+        {
+          find: 'path',
+          replacement: 'path-browserify'
+        }
       ],
     },
     server: {
