@@ -1,6 +1,6 @@
 {
   "name": "generator-vue3-vite-admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vue3 admin generator project",
   "keywords": [
     "yeoman",
@@ -19,6 +19,8 @@
   "devDependencies": {
     "@element-plus/eslint-config": "2.2.13",
     "@types/node": "^18.7.6",
-    "eslint": "^8.22.0"
-  }
+    "eslint": "^8.22.0",
+    "yeoman-generator": "^5.7.0"
+  },
+  "dependencies": {}
 }

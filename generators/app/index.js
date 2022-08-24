@@ -31,7 +31,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copy(this.templatePath("**"), this.destinationPath("./"));
     // 下面文件默认不能直接应用在新项目，需要指定复制一份
-    const specFileList = [".browserlistrc", ".elintrc.js"];
+    const specFileList = [".eslintrc.json"];
     specFileList.forEach((file) => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
